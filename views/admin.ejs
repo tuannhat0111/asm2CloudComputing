@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<head>
+  <title> <%= title %> </title>
+  <link rel='stylesheet', href='/stylesheets/style.css'>
+</head>
+
+<body>
+  <% if (data != null) { %>
+
+  <% for (let p of data) { %>
+    <li> <%= p.username %> </li>
+    <li> <%= p.password %> </li>
+    <li> <%= p.role %> </li>
+    <li> <%= p.shopid %> </li>
+  <% } } %>
+
+  
+<form action="/getProductByShop"  >
+<select class="form-select"  name="Select_Shop">
+    <option selected>Open this select menu</option> 
+     <% for (let p of shopIdList) { %> 
+
+    <option name = "shopid" value= <%= p.shopid %>> <%= p.shopid %> </option>
+ 
+     <% } %> 
+
+ </select>
+    <button class="btn" type="submit">Search</button>
+</form> 
+<% if (products != null) { %>
+
+  <% for (let p of products) { %>
+    <li> <%= p.productid %> </li>
+    <li> <%= p.productname %> </li>
+    <li> <%= p.productquantity %> </li>
+    <li> <%= p.productprice %> </li>
+    <li> <%= p.productdescription %> </li>
+  <% }} %>
+
+
+</body>

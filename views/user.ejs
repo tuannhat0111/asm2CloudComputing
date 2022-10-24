@@ -1,0 +1,30 @@
+
+  <!DOCTYPE html> 
+  <head>
+    <title> <%= title %> </title>
+    <link rel='stylesheet', href='/stylesheets/style.css'>
+  </head>
+
+  <body>
+    
+    <% for (let p of products) { %>
+      <li> <%= p.productid %> </li>
+      <li> <%= p.productname %> </li>
+      <li> <%= p.productquantity %> </li>
+      <li> <%= p.productprice %> </li>
+      <li> <%= p.productdescription %> </li>
+    <% } %>
+
+    <form action="/createproduct" >
+     
+      <button  class="btn" type="submit">Create</button>
+    </form>
+    <form action="/deleteproduct"  method="post">
+      <input type="text" name="idproduct" required>
+      <label for ="idproduct">ID product </label>
+      <button  class="btn" type="submit">Delete</button>
+     </form>
+    <form action="/login" >
+      <button  class="btn" type="submit">Update</button>
+    </form>
+  </body>
